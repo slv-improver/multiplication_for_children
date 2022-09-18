@@ -1,14 +1,20 @@
 import random
 from threading import Timer
+import pyautogui
 
+
+def exit():
+    print('Temps dépassé')
+    pyautogui.hotkey('enter')
 
 time_limit = int(input('Combien de temps pour répondre ? '))
 errors = 0
 points = 0
 nb_of_question = 0
+table = int(input('Quel table ? '))
 
 while errors < 10:
-    first_number = random.randrange(2, 11)
+    first_number = table or random.randrange(2, 11)
     second_number = random.randrange(2, 11)
     multiplication = first_number * second_number
 
